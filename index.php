@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>Upload pastebin</title>
+  <title>Webconverger QA</title>
   <style>
   body { margin: 2em; font-size: 1.2em; font-family: sans-serif; text-align: center; background-color: white; }
   input { font-size: 1.1em; }
@@ -13,7 +13,7 @@
 
 <img src="http://webconverger.com/img/logo.png">
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="qa.php" method="post" enctype="multipart/form-data">
 <input name="f" type="file" />
 <input value="Upload" type="submit">
 </form>
@@ -24,12 +24,12 @@
 ~$ grep -E 'filesize|max_size' $(php --ini | head -n1 | awk '{print $NF}')
 </pre>
 
-<h3>Upload log file like so</h3>
+<h3>Upload UUID.log file like so</h3>
 <pre>curl -F "f=@015BEE48-1351-CB11-9575-F8DF31C806FA.log" http://<?php echo $_SERVER["HTTP_HOST"]; ?>/upload.php</pre>
 <p>Which is put in YYYY-MM-DD/015BEE48-1351-CB11-9575-F8DF31C806FA.log</p>
 
-<h3>Todo</h3>
-<p>Only move into place UUIDs we know about (customers pay for)</p>
+<h3>TODO</h3>
+<p>Only move into place UUIDs we know about (customers pay for). Currently it's unsecured.</p>
 
 </body>
 </html>
