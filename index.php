@@ -25,11 +25,13 @@
 </pre>
 
 <h3>Upload UUID.log file like so</h3>
-<pre>curl -F "f=@015BEE48-1351-CB11-9575-F8DF31C806FA.log" http://<?php echo $_SERVER["HTTP_HOST"]; ?>/upload.php</pre>
+<pre>curl -F "f=@015BEE48-1351-CB11-9575-F8DF31C806FA.log" http://<?php echo $_SERVER["HTTP_HOST"]; ?>/qa.php</pre>
 <p>Which is put in YYYY-MM-DD/015BEE48-1351-CB11-9575-F8DF31C806FA.log</p>
 
 <h3>TODO</h3>
+
 <p>Only move into place UUIDs we know about (customers pay for). Currently it's unsecured.</p>
+<p>Protect YYYY-MM-DD directories.</p>
 
 </body>
 </html>
