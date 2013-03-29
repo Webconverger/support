@@ -6,7 +6,7 @@ date_default_timezone_set('Europe/Berlin');
 umask(002);
 
 if (isset($_FILES['f']) && is_uploaded_file($_FILES['f']['tmp_name'])) {
-	$f = str_replace("%", ";", $_FILES['f']['name']);
+	$f = $_POST["id"];
 	$dir = $logdir;
 	if(! file_exists("$apachelogs/" . $f)) {
 		$msg = "Are you a subscriber?\n";
