@@ -24,7 +24,7 @@
 
 <h1>Logs</h1>
 
-<p>If the <code>cron=0%20*/5%20*%20*%20*%20support</code> debug cronjob is enabled in your <a href="http://config.webconverger.com/clients/install-config/<?php echo $id; ?>">configuration</a>, logs will be published here.</p>
+<p>If the <code>cron=*/5%20*%20*%20*%20*%20root%20support</code> debug cronjob is enabled in your <a href="http://config.webconverger.com/clients/install-config/<?php echo $id; ?>">configuration</a> or the <code>support</code> command is run in <a href="http://webconverger.org/debug/">debug mode</a> as root, logs should appear here.</p>
 
 <?php
 if (is_dir("$logdir/$id") && $handle = opendir("$logdir/$id")) {
