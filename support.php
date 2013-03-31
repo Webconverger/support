@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>Support logs for <?php echo $id ?></title>
+  <title>Support service (beta) for <?php echo $id ?></title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>
@@ -19,25 +19,20 @@
 </p>
 
 <pre>
-<?php echo `tail "a/$id"`; ?>
+<?php echo htmlspecialchars(`tail "a/$id"`); ?>
 </pre>
 
 <h1>Logs</h1>
 
-<p>If the <code>cron=*/5%20*%20*%20*%20*%20root%20support</code> debug cronjob is enabled in your <a href="http://config.webconverger.com/clients/install-config/<?php echo $id; ?>">configuration</a> or the <code>support</code> command is run in <a href="http://webconverger.org/debug/">debug mode</a> as root, logs should appear here.</p>
+<p>If the <code>support</code> API is enabled in your <a href="http://config.webconverger.com/clients/install-config/<?php echo $id; ?>">configuration</a>, logs should appear here.</p>
 
+<ul>
 <?php
-if (is_dir("$logdir/$id") && $handle = opendir("$logdir/$id")) {
-    while (false !== ($entry = readdir($handle))) {
-        if ($entry != "." && $entry != "..") {
-            echo "<li><a href=/$logdir/$id/$entry/syslog>". date('c', intval($entry)) . "</a></li>\n";
-        }
-    }
-    closedir($handle);
+foreach (glob("$logdir/$id/*", GLOB_ONLYDIR) as $filename) {
+	echo "<li><a href=/$filename/syslog>". date('c', intval(basename($filename))) . "</a></li>\n";
 }
 ?>
-
-
+</ul>
 
 <hr>
 <footer>
