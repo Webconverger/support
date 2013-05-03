@@ -29,7 +29,7 @@ if (isset($_FILES['f']) && is_uploaded_file($_FILES['f']['tmp_name'])) {
 } else {
 	// Replace with some Ad?
 	header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
-	die("404");
+	die("Missing machine identity argument.\ne.g. http://support.webconverger.com/EE0CA770-AFFB-453F-B8C5-F9F73135E39A;08:00:27:4e:4a:4e");
 }
 
 ?>

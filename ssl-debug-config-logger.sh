@@ -1,4 +1,4 @@
-tail -F /var/log/apache2/config/access.log |
+tail -F /var/log/apache2/config/access-ssl.log |
 stdbuf -o0  grep -v 404 |
 stdbuf -o0  grep -v bootstrap |
 stdbuf -o0   grep clients/install-config |
@@ -7,5 +7,5 @@ while read date IP request
 do
 	IFS=? read -r base args <<< "$request"
 	base=$(basename $base)
-	echo $(echo $date | tr -d '[') $IP $args >> /srv/www/support.webconverger.com/a/$base
+	echo 🔒 $(echo $date | tr -d '[') $IP $args >> /srv/www/support.webconverger.com/a/$base
 done
