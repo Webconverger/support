@@ -12,8 +12,8 @@ if (isset($_FILES['f']) && is_uploaded_file($_FILES['f']['tmp_name'])) {
 		$msg = "Are you a subscriber?\n";
 		$msg .= "http://config.webconverger.com/clients/install-config/$f\n";
 		$msg .= "Please email support@webconverger.com referencing " . $f . "\n";
-		echo($msg);
-		$dir = 'fail';
+		die($msg);
+		//$dir = 'fail';
 	}
 	$dir = $dir . '/' . $f . '/' . date("U");
 	mkdir($dir, 0777, true);

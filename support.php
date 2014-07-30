@@ -2,7 +2,7 @@
 <html>
  <head>
   <meta charset="utf-8" />
-  <title>Support service (beta) for <?php echo $id ?></title>
+  <title>Support service for <?php echo $id ?></title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
 </head>
 <body>

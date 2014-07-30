@@ -1,7 +1,7 @@
-tail -F /var/log/apache2/config/access-ssl.log |
+tail -F /var/log/apache2/config-access-ssl.log |
 stdbuf -o0  grep -v 404 |
 stdbuf -o0  grep -v bootstrap |
-stdbuf -o0   grep clients/install-config |
+stdbuf -o0  grep clients/install-config |
 stdbuf -o0 awk '{print $4,$1,$7}' |
 while read date IP request
 do
