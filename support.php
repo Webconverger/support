@@ -8,7 +8,8 @@
 <body>
 <div class="container">
 <div class="content">
-<img src="http://webconverger.com/img/logo.png" alt=Webconverger class=headlogo width=450 height=50 />
+<img alt="Webconverger logo" class="logo" height="70" src="https://webconverger.com/img/logo.svg" />
+
 
 <h1>Apache logs</h1>
 
@@ -19,7 +20,7 @@
 </p>
 
 <pre>
-<?php echo htmlspecialchars(`tail "a/$id"`); ?>
+<?php echo (`./taill.sh "$id"`); ?>
 </pre>
 
 <h1>Logs</h1>
